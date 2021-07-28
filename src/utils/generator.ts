@@ -65,6 +65,7 @@ const phrases = [
   'desert oracle',
   'the winds',
   'grand vista',
+  'controversial monolith',
 ]
 
 const shuffle = (array: string[]) => {
