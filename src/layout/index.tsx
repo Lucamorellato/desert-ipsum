@@ -7,9 +7,9 @@ import soundscape from '../../static/assets/redblueblacksilver.mp3'
 
 import { themesObj } from '../styles/theme'
 import GlobalStyles from '../styles/globalStyles'
-import Head from '../components/Head'
-import DarkModeButton from '../components/DarkModeButton'
-import MuteButton from '../components/MuteButton'
+import Head from '../components/Head/Head'
+import DarkModeButton from '../components/DarkModeButton/DarkModeButton'
+import MuteButton from '../components/MuteButton/MuteButton'
 
 interface ILayoutProps {
   children: ReactChild

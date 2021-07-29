@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Layout from '../layout/index'
 
 import Image from '../components/Image'
-import Heading from '../components/Heading'
+import Heading from '../components/Heading/Heading'
 
 import { GatsbyImageFluidProps } from 'gatsby-image'
 

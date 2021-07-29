@@ -1,16 +1,10 @@
-import React from 'react'
 import styled, { keyframes } from 'styled-components'
-
-interface DarkModeButtonProps {
-  isDark: boolean
-  onClick: () => void
-}
 
 interface SwitchProps {
   isDark: boolean
 }
 
-const Switch = styled.div<SwitchProps>`
+export const Switch = styled.div<SwitchProps>`
   position: absolute;
 
   top: 50%;  /* position the top  edge of the element at the middle of the parent */
@@ -103,7 +97,7 @@ const Switch = styled.div<SwitchProps>`
   }
 `
 
-const shake = keyframes`
+export const shake = keyframes`
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
   }
@@ -121,7 +115,7 @@ const shake = keyframes`
   }
 `
 
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
   position: absolute;
   right: 25px;
   top: 25px;
@@ -141,50 +135,3 @@ const StyledButton = styled.button`
     perspective: 1000px;
   }
 `
-
-const MoonRays = styled.article`
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  color: pink;
-  z-index: 200;
-  /* the rays of the sun */
-  &:before,
-  :after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: red;
-    width: 7%;
-    height: 85%;
-    border-radius: 50px;
-    transition: background ${props => props.theme.transitionLong},
-      height ${props => props.theme.transitionLong};
-  }
-  &:before {
-    transform: translate(450%, -100%) rotate(45deg);
-  }
-`
-
-export default ({ isDark, onClick }: DarkModeButtonProps) => {
-  return (
-    <StyledButton
-      onClick={onClick}
-      aria-label={
-        isDark
-          ? 'click to switch to day mode'
-          : 'click to switch to night mode '
-      }
-    >
-      <Switch isDark={isDark}>
-        <div></div>
-        <div></div>
-        <span></span>
-        {isDark && <MoonRays />}
-      </Switch>
-    </StyledButton>
-  )
-}

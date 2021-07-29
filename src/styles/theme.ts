@@ -5,6 +5,7 @@ const colors = {
   black: '#131616',
   white: '#FAFFFD',
   green: '#52796F',
+  offwhite: '#fcfae6',
 }
 
 export const light = {
@@ -14,10 +15,11 @@ export const light = {
   transition: '0.2s cubic-bezier(0.25, 1, 0.5, 1);',
   transitionLong: '0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
   black: colors.black,
-  white: colors.white,
+  white: colors.offwhite,
   green: colors.green,
   textColor: colors.black,
   background: colors.primary,
+  backgroundDivColor: colors.offwhite,
 }
 
 export const dark: ThemeType = {
@@ -25,6 +27,7 @@ export const dark: ThemeType = {
   name: 'dark',
   textColor: colors.primary,
   background: colors.black,
+  backgroundDivColor: 'transparent',
 }
 
 export const themesObj = { light, dark }

@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, ReactEventHandler, ChangeEvent } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../layout/index'
 import Image from '../components/Image'
-import Heading from '../components/Heading'
-import Wrapper from '../components/Wrapper'
+import Heading from '../components/Heading/Heading'
+import Wrapper from '../components/PageWrapper/PageWrapper'
+import Form from '../components/Form/Form'
+import Footer from '../components/Footer/Footer'
+import { LoremContainer } from '../components/Text'
 import { GatsbyImageFluidProps } from 'gatsby-image'
-import { GenerateLorem } from '../utils/generator'
+import { generateLorem } from '../utils/generator'
 
 interface IndexPageProps {
   location: {
@@ -30,32 +33,39 @@ export default ({ data, location }: IndexPageProps) => {
   const [lorem, setLorem] = useState<string>('')
   const [paragraphs, setParagraphs] = useState<number>(1)
 
-  const handleClick = () => {
-    setLorem(GenerateLorem(3))
+  const handleSubmit = (e: ChangeEvent<HTMLInputElement>) => {
+    const generatedLorem = generateLorem(paragraphs)
+    generatedLorem && setLorem(generatedLorem) 
   }
 
-  const handleChange = (e: any) => {
+  const handleRangeChange = (e: ChangeEvent<HTMLInputElement>) => {
     setParagraphs(parseInt(e.target.value))
-    console.log(typeof parseInt(e.target.value))
+    console.log(e.target.value)
+  }
+
+  const createMarkup = () => {
+    return {__html: lorem}; 
   }
 
   return (
     <Layout location={location}>
       <Wrapper>
-        <Image img={image.childImageSharp} />
+        {/* <Image img={image.childImageSharp} /> */}
         <Heading
           title={site.siteMetadata.title}
           subtitle={site.siteMetadata.description}
         />
-        <input
-          type="number"
-          id="quantity"
-          name="quantity"
-          value={paragraphs}
-          onChange={handleChange}
-        ></input>
-        <button onClick={handleClick}>Generate Lorem</button>
-        <Heading title={lorem} />
+        <Form 
+          handleSubmit={(e:ChangeEvent<HTMLInputElement>) => handleSubmit(e)}
+          handleRange={(e:ChangeEvent<HTMLInputElement>) => handleRangeChange(e)}
+          paragraphs={paragraphs} 
+        />
+        {lorem && (
+          <LoremContainer>
+            <div dangerouslySetInnerHTML={createMarkup()} />
+          </LoremContainer>
+        )}
+        <Footer />
       </Wrapper>
     </Layout>
   )

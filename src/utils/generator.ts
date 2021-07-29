@@ -1,5 +1,6 @@
 const phrases = [
-  'protect the wilderness',
+  'protect',
+  'wilderness',
   'yucca man',
   'cacti',
   'ode to solitude',
@@ -13,7 +14,7 @@ const phrases = [
   'plateau',
   'butte',
   'roadrunner',
-  'dry ecosystem',
+  'ecosystem',
   'team buckwheat',
   'wildflowers in the spring',
   'desolation',
@@ -27,10 +28,22 @@ const phrases = [
   'Sonora',
   'Chihuahuan',
   'creosote',
+  'tarantula',
+  'mule deer',
+  'wash',
+  'gravel',
+  'dusty',
+  'dry',
+  'yucca',
+  'bush',
   'dune',
   'mesa',
   'gypsum',
   'sand',
+  'pine',
+  'pinon',
+  'sweetgrass',
+  'flower',
   'erosion',
   'large empty space',
   'flying saucer',
@@ -55,6 +68,7 @@ const phrases = [
   'scorpion',
   'centipede',
   'petroglyphs',
+  'pictographs',
   'arid lands',
   'aliens',
   'Roswell',
@@ -63,9 +77,104 @@ const phrases = [
   'greys',
   'pueblo',
   'desert oracle',
-  'the winds',
+  'winds',
   'grand vista',
   'controversial monolith',
+  'basin',
+  'valley',
+  'aquifer',
+  'coyote melon',
+  'tortoise',
+  'hare',
+  'mountain goat',
+  'monsoon',
+  'rainshadow',
+  'altitude sickness',
+  'salt',
+  'dry lake',
+  'objects',
+  'earth art',
+  'cactus',
+  'ocotillo',
+  'poppy',
+  'dandelion',
+  'marigold',
+  'maripose lily',
+  'cyprus',
+  'ridgeline',
+  'depression',
+  'alkali',
+  'walker',
+  'kangaroo rat',
+  'shrub',
+  'rocks',
+  'stone',
+  'stones',
+  'well',
+  'ants',
+  'apparition',
+  'visions',
+  'mirage',
+  'scalding',
+  'concrete',
+  'baked',
+  'boulder field',
+  'boulder',
+  'garbage',
+  'change',
+  'burro',
+  'goat',
+  'quail',
+  'dove',
+  'branch',
+  'blacktop',
+  'motorcycle',
+  'giant rock',
+  'black rock canyon',
+  'colorado plateau',
+  'snowbird',
+  'dry heat',
+  'swamp cooler',
+  'fan hum',
+  'cardboard',
+  'sonoran dog',
+  'adobe',
+  'biome',
+  'harsh',
+  'drought',
+  'greasewood',
+  'Needles',
+  'Blythe',
+  'palm oasis',
+  'palm',
+  'vista',
+  'Death Valley',
+  'panamint',
+  'chlorax',
+  'wells',
+  'stovepipe',
+  'open space',
+  'hopes and dreams',
+  'rubble',
+  'desert rat',
+  'kangaroo rat',
+  'mountain lion',
+  'desert wilderness',
+  'strange and unusual',
+  'unexplained',
+  'eerie',
+  'paranormal phenomenon',
+  'ranch',
+  'cattle',
+  'rahcner',
+  'cow pucks',
+  'palo santo',
+  'petrified wood',
+  'sage',
+  'dust in your nose',
+  'chapped lips',
+  
+
 ]
 
 const shuffle = (array: string[]) => {
@@ -87,17 +196,28 @@ const shuffle = (array: string[]) => {
 
   return array
 }
-// const words = []
 
 const makeSentence = () => {
   const shuffledPhrases = shuffle(phrases)
   let sentence =
-    shuffledPhrases.slice(0, Math.random() * (12 - 5) + 5).join(' ') + '. '
+    shuffledPhrases.slice(0, Math.random() * (12 - 6) + 6).join(' ') + '. '
   sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1)
   return sentence
 }
 
-export const GenerateLorem = (paragraphs: number) => {
-  console.log(paragraphs)
-  return makeSentence()
+const makeParagraph = (sentences: number) => {
+  let paragraph = []
+  for (let i = 0; i < sentences; i++) {
+    paragraph.push(makeSentence())
+  }
+  return paragraph.join('')
+}
+
+export const generateLorem = (paragraphs: number) => {
+  let lorem = []
+  for (let i = 0; i < paragraphs; i++) {
+    // pass random number between 3-6 for number of sentences in paragraph
+    lorem.push(`<p>${makeParagraph(Math.round(Math.random() * (6 - 3) + 3))}</p>`)
+  }
+  return lorem.join('')
 }
