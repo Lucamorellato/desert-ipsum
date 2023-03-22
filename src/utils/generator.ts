@@ -21,6 +21,12 @@ const phrases = [
   'open range',
   'campfire companion',
   'juniper',
+  'scrub oak',
+  'boojum',
+  'cirrios',
+  'pitaya',
+  'barrel cactus',
+  'gila',
   'kit fox',
   'Mojave phonebooth',
   'Pichacho',
@@ -45,7 +51,7 @@ const phrases = [
   'sweetgrass',
   'flower',
   'erosion',
-  'large empty space',
+  'large space',
   'flying saucer',
   'test range',
   'aliens are real',
@@ -55,7 +61,7 @@ const phrases = [
   'flash flood',
   'dry wash',
   'homesteader',
-  'dusty',
+  'dust',
   'goggles',
   'sunburn',
   `Roy's Motel`,
@@ -77,6 +83,8 @@ const phrases = [
   'greys',
   'pueblo',
   'desert oracle',
+  'wandering',
+  'seco',
   'winds',
   'grand vista',
   'controversial monolith',
@@ -87,6 +95,7 @@ const phrases = [
   'tortoise',
   'hare',
   'mountain goat',
+  'monster',
   'monsoon',
   'rainshadow',
   'altitude sickness',
@@ -95,6 +104,8 @@ const phrases = [
   'objects',
   'earth art',
   'cactus',
+  'cave',
+  'coulee',
   'ocotillo',
   'poppy',
   'dandelion',
@@ -171,10 +182,32 @@ const phrases = [
   'palo santo',
   'petrified wood',
   'sage',
+  'bristlecone',
+  'jackrabbit',
+  'antelope',
   'dust in your nose',
+  'darkling beetle',
+  'lizard',
+  'snake',
+  'rattle',
   'chapped lips',
-  
-
+  'poppy',
+  'lupin',
+  'marigold',
+  'granite',
+  'basalt',
+  'volcano',
+  'lava',
+  'dome',
+  'tamarisk',
+  'fan palm',
+  'icebox',
+  'cooler',
+  'tire hum',
+  'cardon',
+  'drainage',
+  'scrabmle',
+  'wind',
 ]
 
 const shuffle = (array: string[]) => {
@@ -200,7 +233,8 @@ const shuffle = (array: string[]) => {
 const makeSentence = () => {
   const shuffledPhrases = shuffle(phrases)
   let sentence =
-    shuffledPhrases.slice(0, Math.random() * (12 - 6) + 6).join(' ') + '. '
+    // pass random number between 4-10 for number of words in sentence
+    shuffledPhrases.slice(0, Math.random() * (10 - 4) + 6).join(' ') + '. '
   sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1)
   return sentence
 }
@@ -217,7 +251,7 @@ export const generateLorem = (paragraphs: number) => {
   let lorem = []
   for (let i = 0; i < paragraphs; i++) {
     // pass random number between 3-6 for number of sentences in paragraph
-    lorem.push(`<p>${makeParagraph(Math.round(Math.random() * (6 - 3) + 3))}</p>`)
+    lorem.push(`<p>${makeParagraph(Math.round(Math.random() * (6 - 2) + 3))}</p>`)
   }
   return lorem.join('')
 }

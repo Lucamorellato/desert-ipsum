@@ -2,7 +2,7 @@ import React, { ReactChild } from 'react'
 import { Wrapper } from './styles'
 
 interface PageWrapperProps {
-  children: ReactChild[]
+  children: ReactChild|ReactChild[]
 }
 
 

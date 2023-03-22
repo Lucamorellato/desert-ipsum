@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "export SET NODE_OPTIONS=--openssl-legacy-provider && gatsby develop",
     "format": "prettier --write src/**/*.{ts,tsx}",
     "lint": "tslint 'src/**/*.{ts,tsx}'",
     "start": "npm run develop",
@@ -31,6 +31,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
+    "react-scripts": "^5.0.1",
     "styled-components": "^4.4.1",
     "use-sound": "^2.0.1"
   },

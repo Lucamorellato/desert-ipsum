@@ -8,4 +8,5 @@ export const Wrapper = styled.div`
   transition: background ${props => props.theme.transition};
   min-height: 100vh;
   padding-top: 50px;
+  justify-content:center;
 `

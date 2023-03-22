@@ -33,14 +33,13 @@ export default ({ data, location }: IndexPageProps) => {
   const [lorem, setLorem] = useState<string>('')
   const [paragraphs, setParagraphs] = useState<number>(1)
 
-  const handleSubmit = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = () => {
     const generatedLorem = generateLorem(paragraphs)
     generatedLorem && setLorem(generatedLorem) 
   }
 
   const handleRangeChange = (e: ChangeEvent<HTMLInputElement>) => {
     setParagraphs(parseInt(e.target.value))
-    console.log(e.target.value)
   }
 
   const createMarkup = () => {
@@ -56,7 +55,7 @@ export default ({ data, location }: IndexPageProps) => {
           subtitle={site.siteMetadata.description}
         />
         <Form 
-          handleSubmit={(e:ChangeEvent<HTMLInputElement>) => handleSubmit(e)}
+          handleSubmit={() => handleSubmit()}
           handleRange={(e:ChangeEvent<HTMLInputElement>) => handleRangeChange(e)}
           paragraphs={paragraphs} 
         />

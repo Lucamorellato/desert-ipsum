@@ -1,16 +1,16 @@
 import React, { ChangeEvent } from 'react'
-import { Form, Label, Input } from './styles'
+import { Form, Label, Input, Button } from './styles'
 import { Copy } from '../Text'
 
 interface FormProps {
-  handleSubmit: (e:ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: () => void;
   handleRange: (e:ChangeEvent<HTMLInputElement>) => void;
   paragraphs: number;
 }
 
 export default ({ handleSubmit, handleRange, paragraphs }:FormProps) => {
 
-  const handleSubmitClick = (e:ChangeEvent<HTMLInputElement>) => {
+  const handleSubmitClick = (e:ChangeEvent<HTMLInputElement | EventTarget>) => {
     e.preventDefault()
     handleSubmit()
   }
@@ -18,7 +18,7 @@ export default ({ handleSubmit, handleRange, paragraphs }:FormProps) => {
     <Form>
       <Label htmlFor="paragraphs"><Copy>{paragraphs}</Copy><span>paragraphs</span></Label>
       <Input type="range" id="paragraphs" onChange={(e) => handleRange(e)} name="paragraphs" min="1" max="10" value={paragraphs} />
-      <button onClick={(e) => handleSubmitClick(e)}>Generate Lorem</button>
+      <Button onClick={(e) => handleSubmitClick(e)}>Generate Lorem</Button>
     </Form>
   )
 }

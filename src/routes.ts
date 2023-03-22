@@ -9,4 +9,8 @@ module.exports = [
     path: '/404/',
     component: path.resolve(`src/pages/404.tsx`),
   },
+  {
+    path: '/500/',
+    component: path.resolve(`src/pages/500.tsx`),
+  },
 ]
