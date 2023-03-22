@@ -12,7 +12,7 @@ export const CopyText = styled.p`
 export const LoremContainerDiv = styled.div`
     width: 70%;
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
     div {
         background: ${props => (props.theme.backgroundDivColor)};
         padding: 20px 25px;
