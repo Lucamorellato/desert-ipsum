@@ -10,7 +10,8 @@ export const Form = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  z-index: 1;
+  position:relative;
 `;
 
 export const Label = styled.label`

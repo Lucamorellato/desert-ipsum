@@ -22,7 +22,8 @@ export const light = {
   background: colors.primary,
   backgroundDivColor: colors.offwhite,
   boxShadhow: "rgb(0 0 0 / 20%) -2px 4px, rgb(0 0 0 / 10%) -5px 6px, rgb(0 0 0 / 10%) -8px 8px",
-  mediaQuery: 800
+  mediaQuery: 800,
+  starColor: colors.primary,
 }
 
 export const dark: ThemeType = {
@@ -31,7 +32,9 @@ export const dark: ThemeType = {
   textColor: colors.primary,
   background: colors.black,
   backgroundDivColor: colors.offGrey,
-  boxShadhow: "rgba(0,0,0,0) -5px 5px"
+  boxShadhow: "rgba(0,0,0,0) -5px 5px",
+  starColor: colors.white,
+
 }
 
 export const themesObj = { light, dark }

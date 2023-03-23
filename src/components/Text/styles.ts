@@ -13,6 +13,8 @@ export const LoremContainerDiv = styled.div`
     width: 70%;
     margin: 0 auto;
     padding-bottom: 70px;
+    z-index: 1;
+    position:relative;
     div {
         background: ${props => (props.theme.backgroundDivColor)};
         padding: 20px 25px;
