@@ -9,9 +9,7 @@ interface PageWrapperProps {
 }
 
 export default ({ children }: PageWrapperProps) => {
-
   const themeContext = useContext(ThemeContext)
-  console.log('Current theme: ', themeContext)
 
   useEffect(() => {
     if (themeContext.name === "dark") {
@@ -19,7 +17,6 @@ export default ({ children }: PageWrapperProps) => {
     } else {
       clearStars()
     }
-    console.log("useEffect ran")
   }, [themeContext]);
 
   return <Wrapper>
