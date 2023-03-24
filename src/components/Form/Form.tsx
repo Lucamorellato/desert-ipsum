@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react'
-import { Form, Label, Input, Button } from './styles'
+import { Form, Label, Input, Button, RangeContainer } from './styles'
 import { Copy } from '../Text'
 
 interface FormProps {
@@ -16,8 +16,10 @@ export default ({ handleSubmit, handleRange, paragraphs }:FormProps) => {
   }
   return (
     <Form>
-      <Label htmlFor="paragraphs"><Copy>{paragraphs}</Copy><span>paragraphs</span></Label>
-      <Input type="range" id="paragraphs" onChange={(e) => handleRange(e)} name="paragraphs" min="1" max="10" value={paragraphs} />
+      <RangeContainer>
+        <Label htmlFor="paragraphs"><Copy>Paragraphs {paragraphs}</Copy></Label>
+        <Input type="range" id="paragraphs" onChange={(e) => handleRange(e)} name="paragraphs"    min="1" max="10" value={paragraphs} />
+      </RangeContainer>
       <Button onClick={(e) => handleSubmitClick(e)}>Generate Lorem</Button>
     </Form>
   )

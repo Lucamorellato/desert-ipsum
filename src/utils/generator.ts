@@ -14,6 +14,8 @@ const phrases = [
   'crag',
   'plateau',
   'butte',
+  'varnish',
+  'escarpment',
   'roadrunner',
   'ecosystem',
   'team buckwheat',
@@ -23,10 +25,18 @@ const phrases = [
   'campfire companion',
   'juniper',
   'scrub oak',
+  'spring',
   'boojum',
   'cirrios',
+  'irrigation',
+  'Gobi',
+  'steppe',
   'pitaya',
   'barrel cactus',
+  'barren',
+  'cholla',
+  'greasewood',
+  'mesquite',
   'gila',
   'kit fox',
   'Mojave phonebooth',
@@ -37,6 +47,7 @@ const phrases = [
   'creosote',
   'tarantula',
   'mule deer',
+  'clay',
   'wash',
   'gravel',
   'dusty',
@@ -59,16 +70,21 @@ const phrases = [
   'UFO',
   'crater',
   'lake bed',
+  'bed rock',
+  'shale',
   'flash flood',
   'dry wash',
   'homesteader',
   'dust',
   'goggles',
   'sunburn',
+  'burning bush',
+  'sacrement',
   `Roy's Motel`,
   'road house',
   'Salton Sea',
   'carry water',
+  'Atacama',
   'sagebush expanse',
   'canyon',
   'coyote',
@@ -95,10 +111,12 @@ const phrases = [
   'coyote melon',
   'tortoise',
   'hare',
+  'cryptobiotic crusts',
   'mountain goat',
   'monster',
   'monsoon',
   'rainshadow',
+  'shade',
   'altitude sickness',
   'salt',
   'dry lake',
@@ -120,6 +138,15 @@ const phrases = [
   'kangaroo rat',
   'shrub',
   'rocks',
+  'walking',
+  'crawling',
+  'white sky',
+  'scrub',
+  'vast',
+  'unknown',
+  'thirst',
+  'stay with the car',
+  'empty',
   'stone',
   'stones',
   'well',
@@ -146,6 +173,7 @@ const phrases = [
   'colorado plateau',
   'snowbird',
   'dry heat',
+  'oasis',
   'swamp cooler',
   'fan hum',
   'cardboard',
@@ -162,13 +190,16 @@ const phrases = [
   'vista',
   'Death Valley',
   'panamint',
+  'mining',
   'chlorax',
   'wells',
   'stovepipe',
   'open space',
   'hopes and dreams',
   'rubble',
+  'stake',
   'desert rat',
+  'palo verde',
   'kangaroo rat',
   'mountain lion',
   'desert wilderness',
@@ -196,6 +227,11 @@ const phrases = [
   'lupin',
   'marigold',
   'granite',
+  'epoch',
+  'lava tube',
+  'depot',
+  'intrusion',
+  'subduction',
   'basalt',
   'volcano',
   'lava',
@@ -255,38 +291,4 @@ export const generateLorem = (paragraphs: number) => {
     lorem.push(`<p>${makeParagraph(Math.round(Math.random() * (6 - 2) + 3))}</p>`)
   }
   return lorem.join('')
-}
-
-export const makeStars = () => {
-  if(typeof window !== "undefined"){
-    const count = 99;
-    const section = document.querySelector('section')
-    let i = 0
-
-    while (i < count){
-      const star = document.createElement('i');
-      const x = Math.floor(Math.random() * window.innerWidth)
-      const y = Math.floor(Math.random() * window.innerHeight)
-      const size = Math.random() * 4;
-
-      star.style.left = x+'px';
-      star.style.top = y+'px';
-      star.style.width = size+'px';
-      star.style.height = size+'px';
-    
-      const duration = Math.random()*50;
-      star.style.animationDuration = 2+duration+'s';
-      star.style.animationDelay = duration+'s';
-      section?.appendChild(star)
-
-      i++
-    }
-  }
-}
-export const clearStars = () => {
-  const stars = document.querySelectorAll('i')
-
-  for (let i = stars.length; i--; ){
-    stars[i].remove()
-  }
 }

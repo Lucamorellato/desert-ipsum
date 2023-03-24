@@ -5,34 +5,38 @@ interface InputProps {
 }
   
 export const Form = styled.form`
-  width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  width: 70%;
+  justify-content: space-between;
   align-items: center;
   z-index: 1;
   position:relative;
+  flex-direction: row;
+  margin-bottom: 70px;
 `;
 
 export const Label = styled.label`
-  span {
-    opacity: 0;
+  p {
+    font-size: 1rem;
   }
 `
 
 export const Input = styled.input`
+  display: block;
   background:transparent;
   height: 20px;
   -webkit-appearance: none;
   margin: 10px 0;
-  width: 250px
+  width: 250px;
+
 
 :focus {
   outline: none;
 }
 &:active {
   ::-webkit-slider-thumb {
-    background: ${props => props.theme.grey};
+    background: white;
   }
 }
 ::-webkit-slider-runnable-track {
@@ -43,6 +47,8 @@ export const Input = styled.input`
   border-radius: 5px;
   border: 1px solid ${props => props.theme.black};
   transition: background ${props => props.theme.transition};
+  box-shadow: ${props => (props.theme.boxShadhow)};
+
 
 }
 ::-webkit-slider-thumb {
@@ -117,6 +123,19 @@ export const Input = styled.input`
 }
 `;
 
+export const RangeContainer = styled.div`
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  
+
+`;
+
 export const Button = styled.button`
   background-color: ${props => props.theme.textColor};
   color: ${props => props.theme.background};
@@ -135,6 +154,7 @@ export const Button = styled.button`
   -moz-appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
+  box-shadow: ${props => (props.theme.boxShadhow)};
   &:hover {
     opacity: 0.9;
   }

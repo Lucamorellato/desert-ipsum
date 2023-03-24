@@ -21,7 +21,7 @@ export const light = {
   textColor: colors.black,
   background: colors.primary,
   backgroundDivColor: colors.offwhite,
-  boxShadhow: "rgb(0 0 0 / 20%) -2px 4px, rgb(0 0 0 / 10%) -5px 6px, rgb(0 0 0 / 10%) -8px 8px",
+  boxShadhow: "rgb(0 0 0 / 20%) -1px 2px, rgb(0 0 0 / 10%) -2px 4px, rgb(0 0 0 / 10%) -4px 6px",
   mediaQuery: 800,
   starColor: colors.primary,
 }

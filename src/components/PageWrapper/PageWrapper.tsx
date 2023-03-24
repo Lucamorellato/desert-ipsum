@@ -1,5 +1,5 @@
 import React, { ReactChild, useEffect, useContext  } from 'react'
-import { makeStars, clearStars } from '../../utils/generator'
+import { makeStars, clearStars } from '../../utils/utils'
 import { Wrapper } from './styles'
 import { ThemeContext } from 'styled-components'
 
@@ -19,7 +19,5 @@ export default ({ children }: PageWrapperProps) => {
     }
   }, [themeContext]);
 
-  return <Wrapper>
-          {children}
-        </Wrapper>
+  return <Wrapper>{children}</Wrapper>
 }
