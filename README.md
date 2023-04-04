@@ -1,15 +1,7 @@
-## Welcome to 🏜Desert Ipsum🏜
+# Welcome to 🏜Desert Ipsum🏜
 
-## 🚀 Quick start
+## Created by Luca Morellato
 
-1 **Start developing.**
+Little Project I worked on using Gatsby and Typescript. Love letter to my favourite journal/podcast [Desert Oracle](https://www.desertoracle.com/) and all the arid lands of the world.
 
-    ```sh
-    gatsby develop
-    ```
-
-2 **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+Hope you enjoyed it. Feel free to ping me if you wanna chat deserts, existential dread or about your last UFO sighting.

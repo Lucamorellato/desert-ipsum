@@ -7,6 +7,7 @@ module.exports = {
     siteUrl: `https://gatsby-starter-gnonce.netlify.com/`,
     language: `en`,
     twitter: '@LucaMoDev',
+    icon: `src/images/favicon.png`,
   },
   plugins: [
     {
@@ -21,6 +22,12 @@ module.exports = {
       options: {
         path: `${__dirname}/src/routes.ts`,
       },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        "icon": "src/images/favicon.png"
+      }
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-typescript`,

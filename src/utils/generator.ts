@@ -14,9 +14,16 @@ const phrases = [
   'crag',
   'sands of time',
   'blind',
+  'grassland',
+  'the void',
   'burning bush',
-  'temple',
+  'the watch',
+  'temple of the sun',
   'plateau',
+  'cirque',
+  'tower',
+  'footprints',
+  'patina',
   'butte',
   'varnish',
   'escarpment',
@@ -304,8 +311,8 @@ const shuffle = (array: string[]) => {
 const makeSentence = () => {
   const shuffledPhrases = shuffle(phrases)
   let sentence =
-    // pass random number between 4-10 for number of words in sentence
-    shuffledPhrases.slice(0, Math.random() * (10 - 4) + 6).join(' ') + '. '
+    // pass random number between 3-9 for number of strings in sentence
+    shuffledPhrases.slice(0, Math.random() * (9 - 3) + 6).join(' ') + '. '
   sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1)
   return sentence
 }
@@ -321,7 +328,7 @@ const makeParagraph = (sentences: number) => {
 export const generateLorem = (paragraphs: number) => {
   let lorem = []
   for (let i = 0; i < paragraphs; i++) {
-    // pass random number between 3-6 for number of sentences in paragraph
+    // pass random number between 2-6 for number of sentences in paragraph
     lorem.push(`<p>${makeParagraph(Math.round(Math.random() * (6 - 2) + 3))}</p>`)
   }
   return lorem.join('')
