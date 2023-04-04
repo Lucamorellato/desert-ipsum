@@ -29,15 +29,13 @@ export default ({
           language,
           siteUrl,
           twitter,
-          image,
         },
       },
     }) => {
       const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-        // image: thumbnail || `${siteUrl}/assets/thumbnail.png`,
-        image,
+        image: thumbnail || `${siteUrl}images/social.png`,
         url: `${siteUrl}${pathname}`,
         twitter,
       }

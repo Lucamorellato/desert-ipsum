@@ -8,7 +8,6 @@ module.exports = {
     language: `en`,
     twitter: '@LucaMoDev',
     icon: `src/images/favicon.png`,
-    image: `src/images/social.png`,
   },
   plugins: [
     {
