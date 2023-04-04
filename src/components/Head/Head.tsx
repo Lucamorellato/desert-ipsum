@@ -35,7 +35,7 @@ export default ({
       const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-        image: thumbnail || `${siteUrl}images/social.png`,
+        image: thumbnail || `${siteUrl}/images/social.png`,
         url: `${siteUrl}${pathname}`,
         twitter,
       }
