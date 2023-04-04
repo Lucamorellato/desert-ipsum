@@ -4,7 +4,7 @@ module.exports = {
     title: `Desert Ipsum`,
     titleTemplate: ``,
     description: `A desert themed lorem ipsum generator created by Luca Morellato`,
-    siteUrl: `https://gatsby-starter-gnonce.netlify.com/`,
+    siteUrl: `https://desertipsum.gatsbyjs.io/`,
     language: `en`,
     twitter: '@LucaMoDev',
     icon: `src/images/favicon.png`,
