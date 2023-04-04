@@ -27,11 +27,12 @@ export const Title = styled.h1`
 `
 
 export const Subtitle = styled.p`
-  font-size: 1.75rem;
+  font-size: 1.4rem;
   font-family: ${props => props.theme.font};
   color: ${props => props.theme.textColor};
   transition: color ${props => props.theme.transition};
   margin: 0;
+  margin-bottom: 50px;
 
   @media (max-width: ${props => props.theme.mediaQuery}px) {
     font-size: 1.5rem;

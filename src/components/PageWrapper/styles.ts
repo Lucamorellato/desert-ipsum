@@ -15,7 +15,6 @@ export const Wrapper = styled.section`
     position: absolute;
     bottom: 0;
     width: 100vw;
-    background:red;
   }
 
   i {

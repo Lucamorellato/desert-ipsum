@@ -1,8 +1,6 @@
 import React, { useState, useEffect, ReactEventHandler, ChangeEvent } from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 import Layout from '../layout/index'
-import Image from '../components/Image'
 import Heading from '../components/Heading/Heading'
 import Wrapper from '../components/PageWrapper/PageWrapper'
 import Form from '../components/Form/Form'
@@ -29,7 +27,7 @@ interface IndexPageProps {
 }
 
 export default ({ data, location }: IndexPageProps) => {
-  const { image, site } = data
+  const { site } = data
   const [lorem, setLorem] = useState<string>('')
   const [paragraphs, setParagraphs] = useState<number>(1)
 
@@ -49,10 +47,9 @@ export default ({ data, location }: IndexPageProps) => {
   return (
     <Layout location={location}>
       <Wrapper>
-        {/* <Image img={image.childImageSharp} /> */}
         <Heading
           title={site.siteMetadata.title}
-          subtitle={site.siteMetadata.description}
+          // subtitle={site.siteMetadata.description}
         />
         <Form 
           handleSubmit={() => handleSubmit()}
@@ -72,9 +69,6 @@ export default ({ data, location }: IndexPageProps) => {
 
 export const indexPageQuery = graphql`
   query IndexPageQuery {
-    image: file(relativePath: { eq: "icon1.jpg" }) {
-      ...fluidImage
-    }
     site {
       siteMetadata {
         title

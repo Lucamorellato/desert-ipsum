@@ -12,7 +12,7 @@ const colors = {
 export const light = {
   name: 'light',
   font: `"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;`,
-  transition: '0.2s cubic-bezier(0.25, 1, 0.5, 1);',
+  transition: '0.2s cubic-bezier(0.25, 1, 0.5, 1)',
   transitionLong: '0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
   black: colors.black,
   white: colors.offwhite,

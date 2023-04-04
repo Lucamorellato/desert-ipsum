@@ -3,7 +3,7 @@ module.exports = {
     site: `Desert Ipsum`,
     title: `Desert Ipsum`,
     titleTemplate: ``,
-    description: `A desert themed lorem ipsum generator 🏜`,
+    description: `A desert themed lorem ipsum generator`,
     siteUrl: `https://gatsby-starter-gnonce.netlify.com/`,
     language: `en`,
     twitter: '@LucaMoDev',
