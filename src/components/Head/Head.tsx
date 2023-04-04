@@ -35,7 +35,8 @@ export default ({
       const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-        image: thumbnail || `${siteUrl}/images/social.png`,
+        image: "https://th-thumbnailer.cdn-si-edu.com/NsDNvU4moVeKqao5XfJgB8Ez8lg=/1072x720/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/f2/94/f294516b-db3d-4f7b-9a60-ca3cd5f3d9b2/fbby1h_1.jpg",
+        //  || `${siteUrl}/images/social.png`,
         url: `${siteUrl}${pathname}`,
         twitter,
       }
